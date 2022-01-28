@@ -1,7 +1,7 @@
 <?php 
-    require_once __DIR__ . './User.php';
-    require_once __DIR__ . './VideoEditor.php';
-    require_once __DIR__ . './Videogame.php';
+    require_once __DIR__ . '/User.php';
+    require_once __DIR__ . '/VideoEditor.php';
+    require_once __DIR__ . '/Videogame.php';
 
 
     // User log in 
