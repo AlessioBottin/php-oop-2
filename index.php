@@ -8,9 +8,20 @@
     $giorgio = new User('Giorgio', 'Rossi', 15, 'giorgio@mail.it');
 
     // User finds Prodcuts 
-    $da_vinci_resolve = new VideoEditor('Da Vinci Resolve', 300);
+    try {
+        $da_vinci_resolve = new VideoEditor('Da Vinci Resolve', 'ciao');
+    } catch(Exception $e) {
+        echo 'Server in manutenzione';
+        die();
+    }
     $da_vinci_resolve->version = '17.0.0';
-    $pokemon_platino = new Videogame('Pokemon Platino', 60, ['Nintendo DS']);
+
+    try {
+        $pokemon_platino = new Videogame('Pokemon Platino', 60, ['Nintendo DS']);
+    } catch(Exception $e) {
+        echo 'Server in manutenzione';
+        die();
+    }
 
     // Adding products to cart 
     $giorgio->addToCart($da_vinci_resolve);
@@ -19,7 +30,6 @@
     // Getting cart and sum of price
     $cart_price_sum = $giorgio->getTotalPrice();
     $cart = $giorgio->getCart();
-
 ?>
 
 <!DOCTYPE html>
